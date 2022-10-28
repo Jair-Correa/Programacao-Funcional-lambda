@@ -1,9 +1,0 @@
-/**
- * 
- */
-/**
- * @author dellC
- *
- */
-module InterfaceFPredicate {
-}

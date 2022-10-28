@@ -3,9 +3,9 @@ package application;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Locale;
-import java.util.function.Predicate;
 
 import entities.Product;
+import util.PriceUpdate;
 
 public class Program {
 
@@ -20,13 +20,8 @@ public class Program {
 		list.add(new Product("Tablet", 350.5));
 		list.add(new Product("Hd Case", 80.90));
 
-		double min = 100.0;
+		list.forEach(new PriceUpdate());
 
-		list.removeIf(p -> p.getPrice() >= min);
-
-		/* pra cada produto p na minha lista list */
-		for (Product p : list) {
-			System.out.println(p);
-		}
+		list.forEach(System.out::println);
 	}
 }
