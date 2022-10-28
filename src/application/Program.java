@@ -21,7 +21,7 @@ public class Program {
 
 		// remover com função PREDICATE
 		/* Para todo p -> talq todo p seja igual ou maior a 100 */
-		list.removeIf(Product::staticProductPredicate);
+		list.removeIf(Product::nonStaticProductPredicate);
 
 		/* pra cada produto p na minha lista list */
 		for (Product p : list) {
