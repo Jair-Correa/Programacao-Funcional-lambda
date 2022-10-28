@@ -5,7 +5,6 @@ import java.util.List;
 import java.util.Locale;
 
 import entities.Product;
-import util.ProductPredicate;
 
 public class Program {
 
@@ -22,7 +21,7 @@ public class Program {
 
 		// remover com função PREDICATE
 		/* Para todo p -> talq todo p seja igual ou maior a 100 */
-		list.removeIf(new ProductPredicate());
+		list.removeIf(Product::staticProductPredicate);
 
 		/* pra cada produto p na minha lista list */
 		for (Product p : list) {
