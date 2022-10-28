@@ -20,13 +20,9 @@ public class Program {
 		list.add(new Product("Tablet", 350.5));
 		list.add(new Product("Hd Case", 80.90));
 
-		// remover com função PREDICATE
-		/* O predicate recebera uma função lambda
-		 * função anonima que recebera como argumento um produto p
-		 * que ira resultar num booleano p.getPrice() >= 100.0*/
-		Predicate<Product> pred = p -> p.getPrice() >= 100.0; 
-		
-		list.removeIf(pred);
+		double min = 100.0;
+
+		list.removeIf(p -> p.getPrice() >= min);
 
 		/* pra cada produto p na minha lista list */
 		for (Product p : list) {
