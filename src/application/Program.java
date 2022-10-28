@@ -3,6 +3,7 @@ package application;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Locale;
+import java.util.function.Predicate;
 
 import entities.Product;
 
@@ -20,8 +21,12 @@ public class Program {
 		list.add(new Product("Hd Case", 80.90));
 
 		// remover com função PREDICATE
-		/* Para todo p -> talq todo p seja igual ou maior a 100 */
-		list.removeIf(Product::nonStaticProductPredicate);
+		/* O predicate recebera uma função lambda
+		 * função anonima que recebera como argumento um produto p
+		 * que ira resultar num booleano p.getPrice() >= 100.0*/
+		Predicate<Product> pred = p -> p.getPrice() >= 100.0; 
+		
+		list.removeIf(pred);
 
 		/* pra cada produto p na minha lista list */
 		for (Product p : list) {
