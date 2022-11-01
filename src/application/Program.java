@@ -23,11 +23,7 @@ public class Program {
 		double factor = 1.1;
 
 		// VAI RECEBER UMA FUNCAO UM PRODUTO P QUE VAI FAZER A ATUALIZACAO DOS PRECOS
-		Consumer<Product> cons = p -> {
-			p.setPrice(p.getPrice() * factor);
-		};
-
-		list.forEach(cons);
+		list.forEach(p -> p.setPrice(p.getPrice() * factor));
 
 		list.forEach(System.out::println);
 	}
